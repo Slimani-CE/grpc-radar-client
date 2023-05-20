@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+option java_package = "com.mustaphaslimani.radarservice.web.grpc.stubs";
+
+service RadarService{
+  rpc DetectInfraction(DetectRequest) returns (Infraction);
+}
+
+message DetectRequest{
+  int64 radarId = 1;
+  int64 vehicleId = 2;
+  double speed = 3;
+}
+
+message Infraction{
+  int64 id = 1;
+  string date = 2;
+  double vehicleSpeed = 3;
+  double radarMaxSpeed = 4;
+  double fineAmount = 5;
+  int64 radarId = 6;
+  int64 vehicleId = 7;
+  Vehicle vehicle = 8;
+  Radar radar = 9;
+}
+
+message Vehicle{
+  int64 id = 1;
+  string regNumber = 2;
+  string brand = 3;
+  double fiscalPower = 4;
+  string model = 5;
+}
+
+message Radar{
+  int64 id = 1;
+  double maxSpeed = 2;
+  double longitude = 3;
+  double latitude = 4;
+}
