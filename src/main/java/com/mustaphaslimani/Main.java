@@ -24,7 +24,7 @@ public class Main {
         System.out.print("Enter radar latitude : ");
         Double latitude = sc.nextDouble();
         Long radarId = createRadar(maxSpeed, longitude, latitude);
-        System.out.print("Radar created with id: " + radarId);
+        System.out.println("Radar created with id: " + radarId);
 
         // Detect infraction
         int choice = 0;
@@ -52,7 +52,7 @@ public class Main {
     }
 
     private static Long createRadar(Double maxSpeed, Double longitude, Double latitude) {
-        return 4L;
+        return 10L;
     }
 
     private static void detectInfraction(Long radarId, Long vehicleId, Double speed) {
